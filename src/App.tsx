@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Header from './components/layout/Header';
+import Hero from './components/layout/Hero';
+import Analytics from './components/layout/Analytics';
+import MiddleSection from './components/layout/MiddleSection';
+import Dashboard from './components/layout/Dashboard';
+import Insight from './components/layout/Insight';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="rounded-md">
+      <Header />
+      <Hero />
+      <Analytics />
+      <MiddleSection />
+      <Dashboard />
+      <Insight />
+      <Footer />
     </div>
   );
 }
