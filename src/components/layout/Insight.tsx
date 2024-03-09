@@ -87,25 +87,25 @@ const Insight: React.FC<Props> = () => {
         </div>
 
         <div
-          className="rounded-4xl bg-repeat w-full mr-2 border-[0.5px] border-gray-light"
+          className="rounded-4xl bg-repeat w-full mr-2 border-[0.5px] border-gray-light flex flex-col justify-between"
           style={{ backgroundImage: 'url(/assets/img/bg.png)' }}
         >
-          <div className="grid mt-16 mb-6 place-content-center">
-            <StatCard className=" w-64 ml-16" />
+          <div className="relative p-40 ">
+            <StatCard className="inset-y-0 w-2/5 h-4/5 absolute m-auto left-0 right-0" />
             <StatCard
               title="Finance reports"
               icon="network.png"
-              className=" w-80 ml-8 mt-8"
+              className="absolute inset-y-0 w-2/4 h-4/5 m-auto left-0 right-0 -mb-2"
             />
             <StatCard
               title="Insights"
               icon="image-outline.svg"
               amount={2642}
               graph
-              className="mt-20 w-144"
+              className="absolute inset-y-0 w-2/3 h-4/5 m-auto left-0 right-0 rounded-3xl -mb-14"
             />
           </div>
-          <div className="text-center bg-gray-lighter p-10 rounded-bl-4xl rounded-br-4xl">
+          <div className="w-full text-center bg-gray-lighter p-10 rounded-bl-4xl rounded-br-4xl">
             <p className="text-2xl mb-5 wow fadeIn">
               Monitoring key indicators
             </p>

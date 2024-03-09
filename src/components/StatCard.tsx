@@ -21,10 +21,10 @@ const StatCard: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`w-full bg-white m-1 rounded-3xl shadow-2xl p-3 col-start-1 row-start-1 ${className} wow fadeIn duration-1000 delay-700`}
+      className={` bg-white m-1 rounded-3xl shadow-2xl p-3 ${className} wow fadeIn duration-1000 delay-700`}
     >
-      <div className="flex row justify-between items-center ">
-        <div className="flex flex-col justify-between h-52">
+      <div className="flex row justify-between items-end ">
+        <div className="flex flex-col justify-between h-56">
           <div className="justify-start flex items-center">
             {icon && (
               <Circle
@@ -64,7 +64,7 @@ const StatCard: React.FC<Props> = ({
         {graph ? (
           <MixedChart
             labels={['Jan', 'Feb', 'Mar', 'Apr', 'May']}
-            values1={[5, 20, 7, 10, 80]}
+            values1={[90, 100, 200, 200, 200]}
             values2={[5, 20, 7, 10, 80]}
           />
         ) : null}
