@@ -23,7 +23,7 @@ const Dashboard: React.FC<Props> = () => {
         className="bg-gray-lighter pl-16 mt-24"
         style={{ backgroundImage: 'url(/assets/img/bg.png)' }}
       >
-        <p className="font-[500] text-[27rem] text-orange animate-in scale-x-95">
+        <p className="font-[500] text-[27rem] text-orange wow fadeInLeft duration-1000 delay-700">
           Ramos
         </p>
       </div>
