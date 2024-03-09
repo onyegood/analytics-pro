@@ -3,6 +3,7 @@ import Circle from './Circle';
 import Button from './Button';
 import CountUp from 'react-countup';
 import MixedChart from './MixedChart';
+import { labels, values1, values2 } from '../data';
 
 interface Props {
   title?: string;
@@ -62,11 +63,7 @@ const StatCard: React.FC<Props> = ({
           ) : null}
         </div>
         {graph ? (
-          <MixedChart
-            labels={['Jan', 'Feb', 'Mar', 'Apr', 'May']}
-            values1={[90, 100, 200, 200, 200]}
-            values2={[5, 20, 7, 10, 80]}
-          />
+          <MixedChart labels={labels} values1={values1} values2={values2} />
         ) : null}
       </div>
     </div>

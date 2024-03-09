@@ -19,3 +19,7 @@ export const ravenu: Revenu[] = [
     price: '$2,320',
   },
 ];
+
+export const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May'];
+export const values1 = [90, 100, 200, 200, 200];
+export const values2 = [5, 20, 7, 10, 80];

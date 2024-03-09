@@ -61,7 +61,7 @@ const MixedChart: React.FC<Props> = ({ labels, values1, values2 }) => {
           },
         },
       }}
-      width={300}
+      width={280}
       height={150}
     />
   );
