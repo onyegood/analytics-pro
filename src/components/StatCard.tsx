@@ -2,7 +2,7 @@ import React from 'react';
 import Circle from './Circle';
 import Button from './Button';
 import CountUp from 'react-countup';
-import MixedChart from './MixedChart';
+import MixedChart from './charts/MixedChart';
 import { labels, values1, values2 } from '../data';
 
 interface Props {

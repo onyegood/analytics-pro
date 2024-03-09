@@ -3,7 +3,8 @@ import CountUp from 'react-countup';
 import Circle from '../Circle';
 import Button from '../Button';
 import ProgressBar from '../ProgressBar';
-import LineChart from '../LineChart';
+import LineChart from '../charts/LineChart';
+import { labels, values1 } from '../../data';
 
 interface Props {}
 
@@ -89,10 +90,7 @@ const Analytics: React.FC<Props> = () => {
               <div className="w-full border-[0.5px] rounded-2xl h-auto mt-4 border-gray-light p-3 relative">
                 <p className="text-gray text-xs wow fadeIn">Visit Statistics</p>
 
-                <LineChart
-                  labels={['Jan', 'Feb', 'Mar', 'Apr', 'May']}
-                  data={[5, 20, 7, 10, 80]}
-                />
+                <LineChart labels={labels} data={values1} />
 
                 <div className=" w-24 bg-orange rounded-lg p-2 right-2 absolute bottom-2">
                   <div className="flex row justify-between items-center">

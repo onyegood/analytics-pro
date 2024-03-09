@@ -12,7 +12,6 @@ Chart.register(...registerables);
 const BarChart: React.FC<Props> = ({ data, labels }) => {
   return (
     <Bar
-      // datasetIdKey="bar"
       data={{
         labels,
         datasets: [
