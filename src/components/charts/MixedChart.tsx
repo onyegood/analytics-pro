@@ -8,9 +8,17 @@ interface Props {
   labels: string[];
   values1: number[];
   values2: number[];
+  width?: number;
+  height?: number;
 }
 
-const MixedChart: React.FC<Props> = ({ labels, values1, values2 }) => {
+const MixedChart: React.FC<Props> = ({
+  labels,
+  values1,
+  values2,
+  width = 280,
+  height = 150,
+}) => {
   return (
     <Chart
       type="bar"
@@ -61,8 +69,8 @@ const MixedChart: React.FC<Props> = ({ labels, values1, values2 }) => {
           },
         },
       }}
-      width={280}
-      height={150}
+      width={width}
+      height={height}
     />
   );
 };

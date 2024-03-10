@@ -12,24 +12,25 @@ interface Props {}
 const Insight: React.FC<Props> = () => {
   const ref = useRef<HTMLDivElement>(null);
   const revenue = useScrollTriggeredCountUp(ref, 1312);
+
   return (
-    <section className="p-20">
-      <p className="text-left text-8xl wow rotateInUpLeft">We give you full</p>
-      <p className="text-left text-8xl wow rotateInUpLeft">
-        <span className="text-gray-light">control</span> over your data.
+    <section className="p-10">
+      <p className="text-left text-c8xl wow fadeInUp duration-1000 delay-700">
+        We give you full <br /> <span className="text-gray-light">control</span>{' '}
+        over your data.
       </p>
 
       <div className="flex row justify-between mt-20">
         <div
-          className="rounded-4xl bg-repeat w-full mr-2 border-[0.5px] border-gray-light"
+          className="rounded-4xl bg-repeat border-[0.5px] border-gray-light"
           style={{ backgroundImage: 'url(/assets/img/bg.png)' }}
         >
-          <div className="grid my-4 place-content-center">
-            <div className="h-64 w-56 bg-white m-10 rounded-4xl shadow-2xl p-10 flex flex-col items-center justify-between col-start-1 row-start-1 wow fadeIn duration-1000 delay-700">
-              <p className="mb-4 text-sm">Conversion rate</p>
+          <div className="grid p-10 ml-2 pb-0">
+            <div className="convation-rate wow fadeIn duration-1000 delay-700">
+              <p className="mb-4 text-xs">Conversion rate</p>
               <div className="bg-yellow rounded-2xl w-full p-3 text-center relative">
                 <Circle
-                  className="rounded-full bg-gray-light2 h-8 w-8 flex items-center justify-center m-1 absolute bottom-14 right-[7.5rem]"
+                  className="convert-circle"
                   src="/assets/icons/pulse-outline.svg"
                   imageStyle="h-4"
                 />
@@ -42,11 +43,11 @@ const Insight: React.FC<Props> = () => {
               </p>
             </div>
 
-            <div className="w-56 bg-white m-1 rounded-3xl shadow-2xl p-3 col-start-1 row-start-1 ml-60 mt-20 wow fadeIn duration-1000 delay-700">
+            <div className="w-48 h-64 bg-white m-1 rounded-3xl shadow-2xl p-3 col-start-1 row-start-1 ml-40 mt-14 wow fadeIn duration-1000 delay-700">
               <p className="mb-2 text-gray-light text-sm">Sales revenue</p>
               <p className="mb-5 text-3xl" ref={ref}>
                 <span className="text-lg">$ </span>
-                {revenue}K
+                {revenue}k
               </p>
               <ProgressBarMultiple
                 height="h-1"
@@ -62,7 +63,7 @@ const Insight: React.FC<Props> = () => {
                   amount={item.price}
                 />
               ))}
-              <hr className="mt-7 mb-3 border-[0.5px] border-gray-light" />
+              <hr className="mt-5 mb-0 border-[0.5px] border-gray-light" />
               <ListItem title="Engagement rate" amount="47.84%" />
             </div>
           </div>
@@ -79,24 +80,22 @@ const Insight: React.FC<Props> = () => {
         </div>
 
         <div
-          className="rounded-4xl bg-repeat w-full mr-2 border-[0.5px] border-gray-light flex flex-col justify-between"
+          className="monitor"
           style={{ backgroundImage: 'url(/assets/img/bg.png)' }}
         >
-          <div className="relative p-44 ">
-            <StatCard className="inset-y-0 w-2/5 h-[65%] absolute m-auto left-0 right-0" />
+          <div className="relative p-40 ">
+            <StatCard className="inset-y-0 w-[60%] mt-10 h-[60%] absolute m-auto left-0 right-0" />
             <StatCard
               title="Finance reports"
               icon="network.png"
-              className="absolute inset-y-0 w-2/4 h-[65%] m-auto left-0 right-0 mb-8"
+              className="absolute inset-y-0 w-[70%] h-[60%] m-auto left-0 right-0 mb-16"
             />
             <StatCard
               title="Insights"
               icon="image-outline.svg"
               amount={2642}
               graph
-              className="absolute inset-y-0 w-2/3 h-[65%] m-auto left-0 right-0 rounded-3xl -mb-3"
-              chartWidth={280}
-              chartHeight={120}
+              className="absolute inset-y-0 w-[80%] h-[62%] m-auto left-0 right-0 rounded-3xl mb-3"
             />
           </div>
           <div className="w-full text-center bg-gray-lighter p-10 rounded-bl-4xl rounded-br-4xl">
@@ -118,7 +117,7 @@ const Insight: React.FC<Props> = () => {
         </div>
 
         <div>
-          <p className="text-8xl wow fadeInUp duration-1000 delay-700">
+          <p className="text-c8xl wow fadeInUp duration-1000 delay-700">
             Get Started
           </p>
           <p className="mt-8 mb-10 text-gray wow fadeInUp duration-1000 delay-700">

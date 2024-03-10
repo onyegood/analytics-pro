@@ -7,22 +7,22 @@ interface Props {}
 
 const MiddleSection: React.FC<Props> = () => {
   return (
-    <section className="p-20">
-      <p className="text-left text-8xl wow rotateInUpLeft">
+    <section className="p-10">
+      <p className="text-left text-c8xl wow rotateInUpLeft">
         Maximize <span className="text-gray-light">efficiency</span>
       </p>
-      <p className="text-left text-8xl wow rotateInUpLeft">
+      <p className="text-left text-c8xl wow rotateInUpLeft">
         With our intuitive
       </p>
 
       <div className="flex row items-center justify-between mt-5">
         <div className="grid">
           <Circle
-            className="rounded-full bg-gray-light h-24 w-24 col-start-1 row-start-1"
+            className="rounded-full bg-gray-light2 h-22 w-22 col-start-1 row-start-1 z-10"
             src="/assets/icons/flash-outline.svg"
           />
           <Circle
-            className="rounded-full bg-yellow h-24 w-24 flex flex-col items-center justify-center col-start-1 row-start-1 ml-20 text-center"
+            className="rounded-full bg-yellow h-22 w-22 flex flex-col items-center justify-center col-start-1 row-start-1 ml-17 text-center"
             title="45%"
             text={
               <p className="text-[8px]">
@@ -36,7 +36,7 @@ const MiddleSection: React.FC<Props> = () => {
       </div>
       <hr className="border-gray-light mt-10 mb-10" />
       <div className="flex row justify-between items-center">
-        <p>
+        <p className="text-xs">
           Explore trafic sources, page behavior, conversions and more to gain
           deep insight
           <br /> into your audience. With us your business doesn't just adapt -

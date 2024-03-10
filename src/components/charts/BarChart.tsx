@@ -5,11 +5,18 @@ import { Bar } from 'react-chartjs-2';
 interface Props {
   labels: string[];
   data: number[];
+  width?: number;
+  height?: number;
 }
 
 Chart.register(...registerables);
 
-const BarChart: React.FC<Props> = ({ data, labels }) => {
+const BarChart: React.FC<Props> = ({
+  data,
+  labels,
+  width = 250,
+  height = 120,
+}) => {
   return (
     <Bar
       data={{
@@ -49,8 +56,8 @@ const BarChart: React.FC<Props> = ({ data, labels }) => {
           },
         },
       }}
-      width={250}
-      height={120}
+      width={width}
+      height={height}
     />
   );
 };

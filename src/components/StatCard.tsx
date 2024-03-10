@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Circle from './Circle';
 import Button from './Button';
-import CountUp from 'react-countup';
 import MixedChart from './charts/MixedChart';
 import { labels, values1, values2 } from '../data';
+import useScrollTriggeredCountUp from '../hooks/useScrollTriggeredCountUp';
 
 interface Props {
   title?: string;
@@ -11,6 +11,8 @@ interface Props {
   graph?: boolean;
   className?: string;
   amount?: number;
+  chartWidth?: number;
+  chartHeight?: number;
 }
 
 const StatCard: React.FC<Props> = ({
@@ -19,13 +21,17 @@ const StatCard: React.FC<Props> = ({
   graph,
   className,
   amount = 0,
+  chartWidth = 200,
+  chartHeight = 100,
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const profit = useScrollTriggeredCountUp(ref, 2642);
   return (
     <div
       className={` bg-white m-1 rounded-3xl shadow-2xl p-3 ${className} wow fadeIn duration-1000 delay-700`}
     >
       <div className="flex row justify-between items-end ">
-        <div className="flex flex-col justify-between h-56">
+        <div className="flex flex-col justify-between h-[11.5rem]">
           <div className="justify-start flex items-center">
             {icon && (
               <Circle
@@ -41,19 +47,9 @@ const StatCard: React.FC<Props> = ({
           {amount ? (
             <div>
               <p className="mb-2 text-gray-light text-sm">Total profit</p>
-              <p className="mb-5 text-3xl">
+              <p className="mb-5 text-3xl" ref={ref}>
                 <span className="text-lg wow fadeIn">$</span>
-                <CountUp
-                  start={0}
-                  end={amount}
-                  duration={2.75}
-                  separator=","
-                  decimals={0}
-                  decimal=","
-                  prefix=""
-                  suffix="K"
-                  enableScrollSpy
-                />
+                {profit}K
               </p>
               <Button
                 text="Data visualization"
@@ -63,7 +59,13 @@ const StatCard: React.FC<Props> = ({
           ) : null}
         </div>
         {graph ? (
-          <MixedChart labels={labels} values1={values1} values2={values2} />
+          <MixedChart
+            labels={labels}
+            values1={values1}
+            values2={values2}
+            width={chartWidth}
+            height={chartHeight}
+          />
         ) : null}
       </div>
     </div>

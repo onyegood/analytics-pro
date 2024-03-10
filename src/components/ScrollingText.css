@@ -1,28 +1,20 @@
-.scroll {
-  overflow: hidden;
-  height: 8rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 .scroll p {
-  animation: scrolling-type-2 10s infinite linear;
+    animation: scrolling-type-2 10s infinite linear;
 }
 
 @keyframes scrolling-type-2 {
-  0% {
-    transform: translate(50%, 0%);
-    opacity: 0%;
-  }
-  10% {
-    opacity: 100%;
-  }
-  90% {
-    opacity: 100%;
-  }
-  100% {
-    transform: translate(-100%, 0%);
-    opacity: 0%;
-  }
+    0% {
+        transform: translate(50%, 0%);
+        opacity: 0%;
+    }
+    10% {
+        opacity: 100%;
+    }
+    90% {
+        opacity: 100%;
+    }
+    100% {
+        transform: translate(-100%, 0%);
+        opacity: 0%;
+    }
 }

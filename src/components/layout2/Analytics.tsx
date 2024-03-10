@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+
 import Circle from '../Circle';
 import Button from '../Button';
 import ProgressBar from '../ProgressBar';
@@ -15,12 +16,20 @@ const Analytics: React.FC<Props> = () => {
   const transaction = useScrollTriggeredCountUp(ref, 43);
 
   return (
-    <section className="bg-gray-lighter p-20 rounded-[60px] mb-10 mt-20 animate-in slide-in-from-bottom">
+    <div className="bg-gray-lighter p-10 rounded-[60px] mb-10 mt-20">
       <div className="flex row justify-between items-center mb-10">
-        <p className="text-4xl wow fadeInUp duration-1000 delay-300">
+        <p
+          className="text-4xl wow fadeInUp"
+          data-wow-duration="1000"
+          data-wow-delay="300"
+        >
           Your key to strategic <br /> success through analytics
         </p>
-        <p className="wow fadeInUp duration-1000 delay-300">
+        <p
+          className="wow fadeInUp"
+          data-wow-duration="1000"
+          data-wow-delay="300"
+        >
           Ready for exciting instantaneous
           <br /> all-accessible insight in real time?
         </p>
@@ -33,17 +42,25 @@ const Analytics: React.FC<Props> = () => {
                 className="bg-yellow text-xs p-1 rounded-lg"
                 text="Setting up exports"
               />
-              <p className="mt-16 mb-4 text-lg wow fadeIn">
+              <p
+                className="mt-16 mb-4 text-lg wow fadeIn"
+                data-wow-duration="1000"
+                data-wow-delay="300"
+              >
                 Fast and easy access <br />
                 to analytics
               </p>
-              <p className="text-sm text-gray mb-4 wow fadeIn">
+              <p
+                className="text-sm text-gray mb-4 wow fadeIn"
+                data-wow-duration="1000"
+                data-wow-delay="300"
+              >
                 One platform is a comprehensive <br /> system of solutions that
                 will be the <br /> first step towards digitalization
                 <br /> of your business.
               </p>
             </div>
-            <div className="p-5 border-[0.5px] rounded-xl border-gray-light rounded-bl-none">
+            <div className="p-3 border-[0.5px] rounded-xl border-gray-light rounded-bl-none">
               <p className="text-sm wow fadeIn">Sales Statistic</p>
 
               <div className="flex row justify-between">
@@ -63,14 +80,14 @@ const Analytics: React.FC<Props> = () => {
                     </p>
                   </div>
                 </div>
-                <div className="bg-gray-lighter p-3 rounded-xl w-32 mr-3">
+                <div className="bg-gray-lighter p-3 rounded-xl w-24">
                   <p className="text-xs mb-1 wow fadeIn">visitors</p>
                   <ProgressBar count={45} />
-                  <div className="flex items-end justify-start" ref={ref}>
+                  <div className="flex items-start justify-start">
                     {visitors}K
                     <div className="flex items-center justify-center">
                       <Circle
-                        className="rounded-full bg-green h-2 w-2 flex items-center justify-center col-start-1 row-start-1 m-3"
+                        className="rounded-full bg-green h-2 w-2 flex items-center justify-center m-1"
                         src="/assets/icons/arrow-up-outline.svg"
                         imageStyle="h-2"
                         alt="Analytics icon"
@@ -85,9 +102,14 @@ const Analytics: React.FC<Props> = () => {
               <div className="w-full border-[0.5px] rounded-2xl h-auto mt-4 border-gray-light p-3 relative">
                 <p className="text-gray text-xs wow fadeIn">Visit Statistics</p>
 
-                <LineChart labels={labels} data={values1} />
+                <LineChart
+                  labels={labels}
+                  data={values1}
+                  height={70}
+                  width={200}
+                />
 
-                <div className=" w-24 bg-orange rounded-lg p-2 right-2 absolute bottom-2">
+                <div className=" w-20 bg-orange rounded-lg p-1 right-2 absolute bottom-2">
                   <div className="flex row justify-between items-center">
                     <p className=" text-[8px] text-white mb-1 wow fadeIn">
                       Rate
@@ -103,10 +125,10 @@ const Analytics: React.FC<Props> = () => {
             </div>
           </div>
         </div>
-        <div className="bg-black rounded-3xl p-5">
+        <div className="bg-black rounded-3xl p-3">
           <div className="flex row justify-evenly items-center mt-3 mb-10 wow zoomIn">
-            <div className="bg-black-light w-32 h-32 border-[0.5px] border-gray rounded-2xl p-4 flex flex-col justify-between items-center">
-              <img src="/assets/icons/stack2.png" className="" alt="" />
+            <div className="bg-black-light w-28 h-28 border-[0.5px] border-gray rounded-2xl p-2 flex flex-col justify-evenly items-center">
+              <img src="/assets/icons/stack2.png" className="h-7" alt="" />
               <div className="grid">
                 <img
                   src="/assets/img/passport1.jpeg"
@@ -120,8 +142,8 @@ const Analytics: React.FC<Props> = () => {
                 />
               </div>
             </div>
-            <div className="bg-black-light w-32 h-32 border-[0.5px] border-gray rounded-2xl p-4 wow zoomIn">
-              <p className="text-white wow fadeIn">Transaction</p>
+            <div className="bg-black-light w-28 h-28 border-[0.5px] border-gray rounded-2xl p-3 wow zoomIn">
+              <p className="text-white wow fadeIn text-xs">Transaction</p>
               <div className="flex items-center justify-center ml-10">
                 <Circle
                   className="rounded-full bg-green h-4 w-4 flex items-center justify-center col-start-1 row-start-1 m-3 mr-1 ml-0"
@@ -132,11 +154,8 @@ const Analytics: React.FC<Props> = () => {
 
                 <p className="text-green text-[9px] wow fadeIn">+14%</p>
               </div>
-              <p
-                className="text-white text-center text-3xl wow fadeIn"
-                ref={ref}
-              >
-                {transaction}K
+              <p className="text-white text-center text-3xl wow fadeIn">
+                {transaction}k
               </p>
             </div>
           </div>
@@ -158,7 +177,7 @@ const Analytics: React.FC<Props> = () => {
           <br /> and save time for making important, informed decisions.
         </p>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -5,11 +5,18 @@ import { Line } from 'react-chartjs-2';
 interface Props {
   labels: string[];
   data: number[];
+  width?: number;
+  height?: number;
 }
 
 Chart.register(...registerables);
 
-const LineChart: React.FC<Props> = ({ data, labels }) => {
+const LineChart: React.FC<Props> = ({
+  data,
+  labels,
+  width = 280,
+  height = 120,
+}) => {
   return (
     <Line
       datasetIdKey="line"
@@ -51,8 +58,8 @@ const LineChart: React.FC<Props> = ({ data, labels }) => {
           },
         },
       }}
-      width={280}
-      height={120}
+      width={width}
+      height={height}
     />
   );
 };
